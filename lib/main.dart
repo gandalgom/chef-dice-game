@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:dice_game/dice.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -94,10 +96,9 @@ class _LoginState extends State<Login> {
                         onPressed: () {
                           if (diceInputController.text == 'dice') {
                             if (passwordInputController.text == '1234') {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('주사위 페이지로 이동'),
-                                  duration: Duration(seconds: 2),
+                              Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Dice()
                                 )
                               );
                             } else {
